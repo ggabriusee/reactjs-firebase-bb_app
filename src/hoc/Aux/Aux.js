@@ -1,4 +1,4 @@
-//hoc dir means higher order components
+// hoc = higher order components
 const aux = (props) => props.children;
 
 export default aux;
