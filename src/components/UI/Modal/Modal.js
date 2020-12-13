@@ -6,8 +6,12 @@ import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
 
+    //component only update if this.props.show changes
+    //we don't upadate(re-render) OrderSummary (which is in props.children)
+    //when it is not showned on the screen
+    //children check is so that the component will update when it does get new children
     shouldComponentUpdate ( nextProps, nextState ) {
-        return nextProps.show !== this.props.show;
+        return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
     }
 
     componentWillUpdate () {
